@@ -1,3 +1,18 @@
-<div [innerHTML]="shownContent[0]"></div>
-<div [innerHTML]="shownContent[1]"></div>
-<div [innerHTML]="shownContent[2]"></div>
+<!-- {{ content?.id }} -->
+<li *ngIf="content">
+    <h1 class="title">{{ content?.title }}</h1>
+    <a (click)="log()" clickable>
+        <img *ngIf="content?.imgURL" src="{{ content?.imgURL }}">
+    </a>
+    <h2>Developer:</h2>
+    <h3 class="creator">{{ content?.creator }}</h3>
+    <p class="desc">{{ content?.description }}</p>
+    <h2>Genre:</h2>
+    <h3 *ngIf="content?.type" class="type">{{ content?.type }}</h3>
+    <div *ngIf="content?.tags" class="dropdown">
+        <button class="dropbtn">Tags</button>
+        <div class="dropdown-content">
+            <a *ngFor="let tag of content?.tags">{{ tag }}</a>
+        </div>
+    </div>
+</li>

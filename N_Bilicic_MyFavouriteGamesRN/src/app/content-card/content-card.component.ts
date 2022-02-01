@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Content } from '../helper-files/content-interface';
 
 @Component({
   selector: 'app-content-card',
@@ -7,13 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContentCardComponent implements OnInit {
 
-  shownContent : string[];
+  @Input() content?: Content;
 
-  constructor() {
-    this.shownContent = [];
+  log() {
+    console.log('ID:', this.content?.id);
+    console.log('Title:', this.content?.title);
   }
 
-  ngOnInit(): void  {
+  constructor() {
+    
+  }
+
+  ngOnInit(): void {
+    
   }
 
 }
