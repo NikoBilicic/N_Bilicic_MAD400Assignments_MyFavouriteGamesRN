@@ -1,7 +1,3 @@
-:host.is-last {
-    display: none;
-  }
-
 :host {
     display: inline-block;
     height: auto;
@@ -61,8 +57,4 @@
     .dropdown:hover .dropbtn {
         background-color: #931edbe1;
     }
-}
-
-:host.is-first {
-    border-width: 2px;
 }

@@ -33,8 +33,7 @@ export class ContentListComponent implements OnInit {
       In Super Auto Pets you build a team from a lovable cast of animals who will fight for you. They each have unique abilities,
        so choose wisely who will join your team!`,
       creator: `Team Wood Games`,
-      imgURL: `../assets/SAP.jpg`,
-      type: `Strategy`
+      imgURL: `../assets/SAP.jpg`
      }, {
       id: 2,
       title: `Paper Mario: The Thousand-Year Door`,
@@ -60,7 +59,6 @@ export class ContentListComponent implements OnInit {
       entity and fight to take control of or escape the facility!`,
       creator: `Northwood Studios`,
       imgURL: `../assets/SCP.jpg`,
-      type: `Multiplayer`,
       tags: [`Free-to-Play`, `Sci-fi`]
     }, {
       id: 5,
