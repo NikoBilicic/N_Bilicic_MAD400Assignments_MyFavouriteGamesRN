@@ -1,6 +1,29 @@
 :host {
+
     ul {
+        display: inline-flexbox;
         list-style: none;
         columns: 2;
+    }
+
+    #search {
+        margin-right: auto;
+        margin-left: auto;
+        width: 50%;
+        text-align: center;
+        padding: 2.5%;
+    }
+
+    h4.goodSearch {
+        color: green;
+    }
+
+    h4.badSearch {
+        color: red;
+    }
+
+    .selected {
+        border-width: 10px;
+        border-color: #00ff00;
     }
 }
