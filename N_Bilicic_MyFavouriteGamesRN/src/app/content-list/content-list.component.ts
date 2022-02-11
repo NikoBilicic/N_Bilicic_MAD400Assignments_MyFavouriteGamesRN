@@ -87,10 +87,10 @@ export class ContentListComponent implements OnInit {
 
   searchContent(term: string): string {
 
-    let input =  this.list.find(e => e.title.toLowerCase() === term.toLowerCase());
+    let input = this.list.find(e => e.title.toLowerCase() === term.toLowerCase());
     let output = document.querySelector(".outputText");
 
-    if(term === "") {
+    if (term === "") {
       return "";
     }
 
@@ -98,11 +98,11 @@ export class ContentListComponent implements OnInit {
       if (input) {
         output.classList.add('goodSearch');
         output.classList.remove('badSearch');
-        return term + " exists";
+        return (term + " exists").toUpperCase();
       } else {
         output.classList.add('badSearch');
         output.classList.remove('goodSearch');
-        return term + " does not exist";
+        return (term + " does not exist").toUpperCase();
       }
     }
 

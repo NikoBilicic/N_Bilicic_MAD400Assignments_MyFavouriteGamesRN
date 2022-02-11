@@ -1,18 +1,18 @@
-
-<input #searchTitle>
-  <br><button (click)="searchContent(searchTitle.value)">Search</button>
-  <p class="outputText">{{ searchContent(searchTitle.value) }}</p>
+<div id="search">
+    <input #searchTitle>
+    <br><button (click)="searchContent(searchTitle.value)">Search</button>
+    <h4 class="outputText">{{ searchContent(searchTitle.value) }}</h4>
+</div>
 
 <ul>
-    <app-content-card *ngFor="let item of (list | type);" 
-        [content]="item" [ngClass]="'item.type'"></app-content-card>
+    <app-content-card *ngFor="let item of (list | type);" [content]="item" [ngClass]="'item.type'"></app-content-card>
 
-    <app-content-card *ngFor="let item of (list | type: 'RPG');" 
-        [content]="item" [ngClass]="'item.type'"></app-content-card>
+    <app-content-card *ngFor="let item of (list | type: 'RPG');" [content]="item" [ngClass]="'item.type'">
+    </app-content-card>
 
-    <app-content-card *ngFor="let item of (list | type: 'Action');" 
-        [content]="item" [ngClass]="'item.type'"></app-content-card>
+    <app-content-card *ngFor="let item of (list | type: 'Action');" [content]="item" [ngClass]="'item.type'">
+    </app-content-card>
 
-    <app-content-card *ngFor="let item of (list | type: 'Multiplayer');" 
-        [content]="item" [ngClass]="'item.type'"></app-content-card>
+    <app-content-card *ngFor="let item of (list | type: 'Multiplayer');" [content]="item" [ngClass]="'item.type'">
+    </app-content-card>
 </ul>

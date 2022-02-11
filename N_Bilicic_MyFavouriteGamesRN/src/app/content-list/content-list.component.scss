@@ -5,11 +5,18 @@
         columns: 2;
     }
 
-    p.goodSearch {
+    #search {
+        margin-right: auto;
+        margin-left: auto;
+        width: 50%;
+        text-align: center;
+    }
+
+    h4.goodSearch {
         color: green;
     }
 
-    p.badSearch {
+    h4.badSearch {
         color: red;
     }
 
