@@ -12,11 +12,11 @@ export class ContentListComponent implements OnInit {
 
   constructor() {
 
-   }
+  }
 
   ngOnInit(): void {
 
-    this.list = [{ 
+    this.list = [{
       id: 0,
       title: 'Enter The Gungeon',
       description: `Enter the Gungeon is a bullet hell dungeon crawler following a band of misfits seeking to shoot, loot, 
@@ -26,7 +26,7 @@ export class ContentListComponent implements OnInit {
       imgURL: "../assets/gungeon.jpg",
       type: `Action`,
       tags: [`Bullet Hell`, `Roguelike`, `Indie`]
-     }, {
+    }, {
       id: 1,
       title: `Super Auto Pets`,
       description: `Battle against other players at your own pace in this free-to-play chill auto battler.
@@ -34,7 +34,7 @@ export class ContentListComponent implements OnInit {
        so choose wisely who will join your team!`,
       creator: `Team Wood Games`,
       imgURL: `../assets/SAP.jpg`
-     }, {
+    }, {
       id: 2,
       title: `Paper Mario: The Thousand-Year Door`,
       description: `Its plot revolves around Mario, who embarks on a mission to collect the seven Crystal Stars in order to 
@@ -43,15 +43,15 @@ export class ContentListComponent implements OnInit {
       creator: `Intelligent Systems`,
       imgURL: `../assets/papermario.jpg`,
       type: `RPG`
-     }, {
-       id: 3,
-       title: `DayZ`,
-       description: `DayZ is an unforgiving, authentic, open world sandbox online game where each one of 60 players on a 
+    }, {
+      id: 3,
+      title: `DayZ`,
+      description: `DayZ is an unforgiving, authentic, open world sandbox online game where each one of 60 players on a 
        server follows a single goal - to survive as long as they can, by all means necessary.`,
-       creator: `Bohemia Interactive`,
-       imgURL: `../assets/dayz.png`,
-       type: `Multiplayer`
-     }, {
+      creator: `Bohemia Interactive`,
+      imgURL: `../assets/dayz.png`,
+      type: `Multiplayer`
+    }, {
       id: 4,
       title: `SCP: Secret Laboratory`,
       description: `Deep within the SCP Foundation during a containment breach, many of the anomalies have bypassed security and 
@@ -83,6 +83,30 @@ export class ContentListComponent implements OnInit {
       tags: [`Roguelike`, `Indie`]
     }];
 
+  }
+
+  searchContent(term: string): string {
+
+    let input =  this.list.find(e => e.title.toLowerCase() === term.toLowerCase());
+    let output = document.querySelector(".outputText");
+
+    if(term === "") {
+      return "";
+    }
+
+    if (output) {
+      if (input) {
+        output.classList.add('goodSearch');
+        output.classList.remove('badSearch');
+        return term + " exists";
+      } else {
+        output.classList.add('badSearch');
+        output.classList.remove('goodSearch');
+        return term + " does not exist";
+      }
+    }
+
+    return "Error";
   }
 
 }

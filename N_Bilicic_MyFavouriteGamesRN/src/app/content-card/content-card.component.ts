@@ -12,7 +12,7 @@ export class ContentCardComponent implements OnInit {
 
   log() {
     console.log('ID:', this.content?.id);
-    console.log('Title:', this.content?.title);
+    console.log('Title:', this.content?.type);
   }
 
   constructor() {
@@ -20,7 +20,7 @@ export class ContentCardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
+
   }
 
 }
