@@ -12,11 +12,11 @@ export class ContentCardComponent implements OnInit {
 
   log() {
     console.log('ID:', this.content?.id);
-    console.log('Title:', this.content?.type);
+    console.log('Title:', this.content?.title);
   }
 
   constructor() {
-    
+
   }
 
   ngOnInit(): void {

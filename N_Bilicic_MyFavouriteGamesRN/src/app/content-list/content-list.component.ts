@@ -85,6 +85,27 @@ export class ContentListComponent implements OnInit {
 
   }
 
+  selectCard(term: string, valid: boolean) {
+    var selected = document.getElementById(term);
+    var cards = document.getElementsByTagName("app-content-card");
+
+    if (cards) {
+      if (valid) {
+        for (var i = 0; i < cards.length; i++) {
+          if (cards[i].id == selected?.id) {
+            cards[i].classList.add('selected');
+          } else {
+            cards[i].classList.remove('selected');
+          }
+        }
+      } else {
+        for (var i = 0; i < cards.length; i++) {
+          cards[i].classList.remove('selected');
+        }
+      }
+    }
+  }
+
   searchContent(term: string): string {
 
     let input = this.list.find(e => e.title.toLowerCase() === term.toLowerCase());
@@ -98,15 +119,19 @@ export class ContentListComponent implements OnInit {
       if (input) {
         output.classList.add('goodSearch');
         output.classList.remove('badSearch');
+        this.selectCard(term, true);
         return (term + " exists").toUpperCase();
       } else {
         output.classList.add('badSearch');
         output.classList.remove('goodSearch');
+        this.selectCard(term, false);
         return (term + " does not exist").toUpperCase();
       }
     }
 
     return "Error";
   }
+
+
 
 }
