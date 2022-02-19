@@ -18,6 +18,6 @@
     <ng-template #elseBlock>No Genre Associated</ng-template>
     <h3 *ngIf="content?.tags" class="tagsTitle"><b><u>Tags</u></b></h3>
     <ul *ngIf="content?.tags" class="tagList">
-        <li *ngFor="let tag of content?.tags" class="tag">{{ tag }}</li>
+        <li *ngFor="let tag of content?.tags" class="tag" appHoverAffect>{{ tag }}</li>
     </ul>
 </li>

@@ -3,7 +3,7 @@ import { Directive, ElementRef, HostListener, OnInit } from '@angular/core';
 @Directive({
   selector: '[appHoverAffect]'
 })
-export class HoverAffectDirective implements OnInit{
+export class HoverAffectDirective implements OnInit {
 
   constructor(private elm: ElementRef) { }
 
@@ -12,19 +12,35 @@ export class HoverAffectDirective implements OnInit{
   }
 
   @HostListener('mouseover') onHover() {
-    this.underlineMe();
+    this.styleMe();
   }
 
   @HostListener('mouseleave') offHover() {
-    this.removeUnderline();
+    this.removeStyle();
   }
 
-  private underlineMe() {
-    this.elm.nativeElement.style.textDecoration = "underline";
+  private styleMe() {
+    if (this.elm.nativeElement.classList[0] == "type") {
+      this.elm.nativeElement.style.textDecoration = "underline";
+    } else if (this.elm.nativeElement.classList[0] == "tag") {
+      this.elm.nativeElement.style.fontWeight = "bold";
+    } else if (this.elm.nativeElement.classList.contains('is-first') ||
+      this.elm.nativeElement.classList.contains('is-last')) {
+          this.elm.nativeElement.style.borderWidth = "10px";
+        this.elm.nativeElement.style.borderColor = "purple";
+    }
   }
 
-  private removeUnderline() {
-    this.elm.nativeElement.style.textDecoration = "none";
+  private removeStyle() {
+    if (this.elm.nativeElement.classList[0] == "type") {
+      this.elm.nativeElement.style.textDecoration = "none";
+    } else if (this.elm.nativeElement.classList[0] == "tag") {
+      this.elm.nativeElement.style.fontWeight = "normal";
+    } else if (this.elm.nativeElement.classList.contains('is-first') ||
+      this.elm.nativeElement.classList.contains('is-last')) {
+        this.elm.nativeElement.style.borderWidth = "1px";
+        this.elm.nativeElement.style.borderColor = "black";
+    }
   }
 
 }

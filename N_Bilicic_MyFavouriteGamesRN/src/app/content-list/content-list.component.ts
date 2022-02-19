@@ -80,6 +80,21 @@ export class ContentListComponent implements OnInit {
       imgURL: `../assets/isaac.jpg`,
       type: `Action`,
       tags: [`Roguelike`, `Indie`]
+    }, {
+      id: 7,
+      title: `Escape from Tarkov`,
+      description: `Escape from Tarkov is a hardcore and realistic online first-person action RPG/Simulator 
+      with MMO features and a story-driven walkthrough.\nWith each passing day the situation in the Norvinsk region grows more and more complicated. 
+      Incessant warfare in Tarkov has sparked massive panic; the local population has fled the city, but those who stayed are looking to improve 
+      their fortunes at the expense of others. Having accepted the new reality, savage Tarkov locals - "Scavs" flocked into well-armed gangs and 
+      started the redivision of the city. Nowadays, Tarkov is separated by unseen borders, controlled by different groups. Gain-greedy gunmen would 
+      go to any length to have their way, including the murder of civilians and direct confrontation with the two private military companies.
+      \nThe players will have to experience living in the skin of one of the mercenaries who survived the initial stage of the Tarkov conflict.
+       After choosing one of the sides – USEC or BEAR – the player’s character starts to make his way out of the city. 
+       Tarkov is sealed off by UN and Russian military, supply chains are cut, communication with operational command is lost, and in these 
+       conditions everyone has to make his own choices of what to do and how to get out of the chaos-ridden metropolis.`,
+      creator: `Battlestate Games`,
+      tags: [`Tactical Shooter`, `Looting`]
     }];
 
   }
