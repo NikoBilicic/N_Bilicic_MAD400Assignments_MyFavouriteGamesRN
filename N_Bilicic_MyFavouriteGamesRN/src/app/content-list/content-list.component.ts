@@ -49,7 +49,6 @@ export class ContentListComponent implements OnInit {
       description: `DayZ is an unforgiving, authentic, open world sandbox online game where each one of 60 players on a 
        server follows a single goal - to survive as long as they can, by all means necessary.`,
       creator: `Bohemia Interactive`,
-      imgURL: `../assets/dayz.png`,
       type: `Multiplayer`
     }, {
       id: 4,
