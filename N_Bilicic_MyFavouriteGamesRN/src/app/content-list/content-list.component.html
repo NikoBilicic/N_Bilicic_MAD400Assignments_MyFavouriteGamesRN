@@ -6,15 +6,19 @@
 </div>
 
 <ul>
-    <app-content-card *ngFor="let item of (list | type);" [content]="item" id="{{ item.title }}">
+    <app-content-card *ngFor="let item of (list | type); index as i; last as isLast; first as isFirst"
+     [content]="item" [class.is-first]="isFirst" [class.is-last]="isLast" id="{{ item.title }}" appHoverAffect>
     </app-content-card>
 
-    <app-content-card *ngFor="let item of (list | type: 'RPG');" [content]="item" id="{{ item.title }}">
+    <app-content-card *ngFor="let item of (list | type: 'RPG'); index as i; last as isLast; first as isFirst"
+     [content]="item" [class.is-first]="isFirst" [class.is-last]="isLast" id="{{ item.title }}" appHoverAffect>
     </app-content-card>
 
-    <app-content-card *ngFor="let item of (list | type: 'Action');" [content]="item" id="{{ item.title }}">
+    <app-content-card *ngFor="let item of (list | type: 'Action'); index as i; last as isLast; first as isFirst"
+     [content]="item" [class.is-first]="isFirst" [class.is-last]="isLast" id="{{ item.title }}" appHoverAffect>
     </app-content-card>
 
-    <app-content-card *ngFor="let item of (list | type: 'Multiplayer');" [content]="item" id="{{ item.title }}">
+    <app-content-card *ngFor="let item of (list | type: 'Multiplayer'); index as i; last as isLast; first as isFirst"
+     [content]="item" [class.is-first]="isFirst" [class.is-last]="isLast" id="{{ item.title }}" appHoverAffect>
     </app-content-card>
 </ul>
