@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
 import { FAVOURITE_GAMES } from '../helper-files/contentDb';
 import { GameListService } from '../services/game-list.service';
+import { MessageServiceService } from '../services/message-service.service';
 
 @Component({
   selector: 'app-content-list',
@@ -12,13 +13,15 @@ export class ContentListComponent implements OnInit {
 
   list: Content[] = [];
 
-  constructor(private gameListService: GameListService) {
+  constructor(private gameListService: GameListService, private messageService: MessageServiceService) {
 
   }
 
   ngOnInit(): void {
 
     this.gameListService.getGames().subscribe(listOfGames => this.list = listOfGames);
+    this.messageService.clear();
+    this.messageService.add("Games array loaded!");
 
   }
 

@@ -25,7 +25,9 @@ export class AppComponent implements OnInit {
 
   showGame(id: string): void {
 
-    if (parseInt(id)) {
+    this.messageService.clear();
+
+    if (!parseInt(id)) {
       this.messageService.add("Please enter a valid input.")
       return;
     }
@@ -37,10 +39,9 @@ export class AppComponent implements OnInit {
       let gamesInArray = gamesArray.find(game => game.id === gameId);
       if (!gamesInArray) {
         this.messageService.add("Please enter a valid id.")
-        console.log("clicked");
       } else {
+        this.messageService.add(`Game at id: ${ id }`);
         this.game = gamesInArray;
-        console.log(gamesInArray);
       }
     })
 
