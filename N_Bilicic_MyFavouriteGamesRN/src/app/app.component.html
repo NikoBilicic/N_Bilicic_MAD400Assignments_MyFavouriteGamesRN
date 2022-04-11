@@ -1,1 +1,9 @@
+<div>
+    <label>Enter Id of game you wish to display: <input #id></label>
+    <button (click)="showGame(id.value)">Show Game</button>
+</div>
+<app-content-card [content] ="game" class="game"></app-content-card>
+
 <app-content-list></app-content-list>
+
+<app-messages></app-messages>
