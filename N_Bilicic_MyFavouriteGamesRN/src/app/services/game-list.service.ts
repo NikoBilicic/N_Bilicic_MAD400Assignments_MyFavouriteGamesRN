@@ -3,20 +3,37 @@ import { Observable, of } from 'rxjs';
 import { MessageServiceService } from './message-service.service';
 import { Content } from '../helper-files/content-interface';
 import { FAVOURITE_GAMES } from '../helper-files/contentDb';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GameListService {
-
-  constructor(private messageService: MessageServiceService) { }
+  
+  private httpOptions = {
+    headers: new HttpHeaders({ 'Content-type':
+    'application/json' })
+    };
+    
+  constructor(private messageService: MessageServiceService, private http: HttpClient) { }
 
   getGames(): Observable<Content[]> {
-    return of(FAVOURITE_GAMES);
+    this.messageService.add("Game array loading!");
+    return this.http.get<Content[]>("api/games");
   }
 
   getGame(id: number): Observable<Content> {
-    this.messageService.add(`Game at id: ${id}`);
-    return of(FAVOURITE_GAMES[id]);
+    this.messageService.add(`Game with ID: ${id}`);
+    return this.http.get<Content>("api/games/" + id);
   }
-}
+
+  addGame(newGame: Content): Observable<Content>{
+    this.messageService.add("Adding new game to the server!");
+    return this.http.post<Content>("api/games", newGame, this.httpOptions);
+  }
+
+  updateGame(game: Content): Observable<any>{
+    this.messageService.add("Updating content on the server, id: " + game.id);
+    return this.http.put("api/digimon", game, this.httpOptions);
+    }
+} 
