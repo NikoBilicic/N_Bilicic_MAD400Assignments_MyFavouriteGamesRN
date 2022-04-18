@@ -2,6 +2,7 @@ import { Content } from './helper-files/content-interface';
 import { Component, OnInit } from '@angular/core';
 import { GameListService } from './services/game-list.service';
 import { MessageServiceService } from './services/message-service.service';
+import { UpdateService } from './services/update.service';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,7 @@ export class AppComponent implements OnInit {
   title = 'N_Bilicic_MyFavouriteGamesRN';
   game?: Content;
 
-  constructor(private gameListService: GameListService, private messageService: MessageServiceService) {
+  constructor(private gameListService: GameListService, private messageService: MessageServiceService, private updateService: UpdateService) {
   }
 
   ngOnInit(): void {
@@ -20,6 +21,8 @@ export class AppComponent implements OnInit {
     this.gameListService.getGame(2).subscribe(
       gameAtIndex => this.game = gameAtIndex
     );
+
+    this.updateService.init();
 
   }
 
