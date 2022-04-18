@@ -9,7 +9,7 @@
     "generatecomponent": "ng generate component",
     "generatepipe": "ng generate pipe",
     "generatedirective": "ng generate directive",
-    "start": "http-server -p 8080 -c-1 dist/learningangular"
+    "start": "http-server -p 8080 -c-1 dist/NikoBilicicFavouriteGames"
   },
   "private": true,
   "dependencies": {
