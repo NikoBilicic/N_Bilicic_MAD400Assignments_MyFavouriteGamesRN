@@ -1,0 +1,32 @@
+<div>
+    <mat-form-field><mat-label>ID:</mat-label> <input matInput #tempid type="number"></mat-form-field>
+</div>
+<div>
+    <mat-form-field><mat-label>Title:</mat-label> <input matInput #title></mat-form-field>
+    
+</div>
+<div>
+    <mat-form-field><mat-label>Description:</mat-label> <input matInput #description></mat-form-field>
+    
+</div>
+<div>
+    <mat-form-field><mat-label>Creator:</mat-label> <input matInput #creator></mat-form-field>
+    
+</div>
+<div>
+    <mat-form-field><mat-label>Image URL:</mat-label> <input matInput #imgURL></mat-form-field>
+    
+</div>
+<div>
+    <mat-form-field><mat-label>Type:</mat-label> <input matInput #type></mat-form-field>
+    
+</div>
+<div>
+    <mat-form-field><mat-label>Tags: </mat-label><input matInput #temptags></mat-form-field>
+    
+</div>
+<div>
+    <button mat-raised-button color="primary" (click)="modifyOrAddItemToParent(tempid.value, title.value, description.value, creator.value, imgURL.value, type.value, temptags.value)">{{ buttText  }}</button>
+    <button mat-raised-button color="primary" (click)="closeDialog()">Cancel</button>
+</div>
+

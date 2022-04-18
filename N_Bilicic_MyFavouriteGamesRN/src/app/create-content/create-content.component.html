@@ -1,11 +1,18 @@
 <h2>Add an Item</h2>
-ID: <input #ID> <br>
-Title: <input #Title> <br>
-Description: <input #Desc> <br>
-Creator: <input #Creator> <br>
-Image: <input #Img> <br>
-Genre: <input #Type> <br>
-Tags: <input #Tags> <br>
-<button #Submit (click)="addItem(ID.value, Title.value,
+<mat-form-field><mat-label>ID:</mat-label> <input matInput #ID> </mat-form-field>
+
+<mat-form-field><mat-label>Title:</mat-label> <input matInput #Title> </mat-form-field>
+
+<mat-form-field><mat-label>Description:</mat-label> <input matInput #Desc> </mat-form-field>
+
+<mat-form-field><mat-label>Creator:</mat-label> <input matInput #Creator> </mat-form-field>
+
+<mat-form-field><mat-label>Image:</mat-label> <input matInput #Img> </mat-form-field>
+
+<mat-form-field><mat-label>Genre:</mat-label> <input matInput #Type> </mat-form-field>
+
+<mat-form-field><mat-label>Tags:</mat-label> <input matInput #Tags> </mat-form-field>
+
+<button mat-raised-button color="primary" #Submit (click)="addItem(ID.value, Title.value,
 Desc.value, Creator.value, Img.value, Type.value,
 Tags.value)">Submit</button>

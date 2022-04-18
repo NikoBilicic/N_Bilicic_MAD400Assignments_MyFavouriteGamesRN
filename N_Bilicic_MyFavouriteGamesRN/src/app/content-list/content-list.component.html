@@ -3,9 +3,12 @@
 </div>
 
 <div id="search">
-    <input #searchTitle>
+    <mat-form-field>
+        <input matInput #searchTitle>
+    </mat-form-field>
     <br><br>
-    <button (click)="searchContent(searchTitle.value)">Search</button>
+<button mat-raised-button color="primary" (click)="searchContent(searchTitle.value)">Search</button>
+    
     <h4 class="outputText">{{ searchContent(searchTitle.value) }}</h4>
 </div>
 
