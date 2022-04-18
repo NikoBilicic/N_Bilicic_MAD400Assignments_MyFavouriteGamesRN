@@ -27,7 +27,7 @@ export class CreateContentComponent implements OnInit {
       imgURL: image,
       description: desc,
       type: genre,
-      tags: tags.split(" ")
+      tags: tags.split(",")
     };
     console.log(this.newItem);
     this.newItemEvent.emit(this.newItem);

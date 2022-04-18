@@ -1,6 +1,5 @@
-
 <div>
-    <app-create-content (newItemEvent)="addGameToList( $event )"></app-create-content>
+    <app-modify-content-component (newContentEvent)="addGameToList($event)" (updateContentEvent)="updateGameOnList()"></app-modify-content-component>
 </div>
 
 <div id="search">
