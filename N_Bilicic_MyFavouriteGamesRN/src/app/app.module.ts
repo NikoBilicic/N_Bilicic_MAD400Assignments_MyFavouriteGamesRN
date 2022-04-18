@@ -22,6 +22,10 @@ import {ContentDialogComponent } from './content-dialog/content-dialog.component
 import {MatCardModule} from '@angular/material/card';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatBadgeModule} from '@angular/material/badge';
+import { ContentDetailComponent } from './content-detail/content-detail.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { AppRoutingModule } from './app-routing.module';
+
 
 @NgModule({
   declarations: [
@@ -34,6 +38,8 @@ import {MatBadgeModule} from '@angular/material/badge';
     MessagesComponent,
     ModifyContentComponentComponent,
     ContentDialogComponent,
+    ContentDetailComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,7 +57,8 @@ import {MatBadgeModule} from '@angular/material/badge';
     MatDialogModule,
     MatCardModule,
     MatDividerModule,
-    MatBadgeModule
+    MatBadgeModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
