@@ -1,6 +1,4 @@
-import { Content } from "./content-interface"
-
-export const FAVOURITE_GAMES: Content[] = [{
+export const FAVOURITE_GAMES = [{
     id: 0,
     title: 'Enter The Gungeon',
     description: `Enter the Gungeon is a bullet hell dungeon crawler following a band of misfits seeking to shoot, loot, 

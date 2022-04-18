@@ -10,7 +10,6 @@ import { FAVOURITE_GAMES } from '../helper-files/contentDb';
 })
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
-    // setting it to the value of our array of content
     const content: Content[] = FAVOURITE_GAMES;
     return { content };
   }

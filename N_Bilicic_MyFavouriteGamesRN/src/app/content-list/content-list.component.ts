@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Content } from '../helper-files/content-interface';
 import { FAVOURITE_GAMES } from '../helper-files/contentDb';
 import { GameListService } from '../services/game-list.service';
@@ -72,10 +73,19 @@ export class ContentListComponent implements OnInit {
     return "Error";
   }
 
-  addGameToList(newGame: Content) {
-    this.list.push(newGame);
-    this.list = Object.assign([], this.list);
-    this.list = [...this.list];
-  }
+  addGameToList(newGame: Content): void {
+    this.messageService.add("New game added, ID is " + newGame.id);
+    this.gameListService.getGames().subscribe(listOfGames => {
+    this.list = listOfGames;
+    this.messageService.add("New game displayed");
+    });
+    }    
+
+    updateGameOnList(): void{
+      this.gameListService.getGames().subscribe(listOfGames => {
+        this.list = listOfGames;
+        this.messageService.add("Games on the list updated");
+      });
+    }
 
 }
