@@ -13,6 +13,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './services/in-memory-data.service';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatDialogModule} from '@angular/material/dialog';
+import {ContentDialogComponent } from './content-dialog/content-dialog.component';
+import {MatCardModule} from '@angular/material/card';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatBadgeModule} from '@angular/material/badge';
 
 @NgModule({
   declarations: [
@@ -23,7 +32,8 @@ import { FormsModule } from '@angular/forms';
     HoverAffectDirective,
     CreateContentComponent,
     MessagesComponent,
-    ModifyContentComponentComponent
+    ModifyContentComponentComponent,
+    ContentDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,8 +42,16 @@ import { FormsModule } from '@angular/forms';
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService,
     {
       dataEncapsulation: false,
-      delay: 2000,
-    })
+      delay: 500,
+    }),
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDialogModule,
+    MatCardModule,
+    MatDividerModule,
+    MatBadgeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

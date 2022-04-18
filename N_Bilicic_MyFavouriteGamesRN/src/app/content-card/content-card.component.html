@@ -1,14 +1,17 @@
 <!-- {{ content?.id }} -->
-<li class="{{ content?.type }}" *ngIf="content">
-    <h1 class="title">{{ content?.title }}</h1>
+<mat-card class="{{ content?.type }}" *ngIf="content">
+    <mat-card-title class="title">{{ content?.title }}</mat-card-title>
+    <br>
+    <mat-card-content>
     <a (click)="log()" clickable>
-        <img *ngIf="content?.imgURL; else imageElse" src="{{ content?.imgURL }}">
+        <img mat-card-image *ngIf="content?.imgURL; else imageElse" src="{{ content?.imgURL }}">
         <ng-template #imageElse>
             <img src="../assets/nullimage.jpg">
         </ng-template>
 
     </a>
-    <h2>Developer:</h2>
+    
+        <h2>Developer:</h2>
     <h3 class="creator">{{ content?.creator }}</h3>
     <p class="desc">{{ content?.description }}</p>
     <h2>Genre:</h2>
@@ -20,4 +23,5 @@
     <ul *ngIf="content?.tags" class="tagList">
         <li *ngFor="let tag of content?.tags" class="tag" appHoverAffect>{{ tag }}</li>
     </ul>
-</li>
+</mat-card-content>
+</mat-card>
