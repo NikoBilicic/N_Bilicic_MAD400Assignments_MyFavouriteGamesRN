@@ -34,15 +34,8 @@ export class AppComponent implements OnInit {
 
     let gameId = parseInt(id);
 
-    this.gameListService.getGames().subscribe(gamesArray => {
-
-      let gamesInArray = gamesArray.find(game => game.id === gameId);
-      if (!gamesInArray) {
-        this.messageService.add("Please enter a valid id.")
-      } else {
-        this.messageService.add(`Game at id: ${ id }`);
-        this.game = gamesInArray;
-      }
+    this.gameListService.getGame(gameId).subscribe(gamesArray => {
+        this.game = gamesArray
     })
 
   }

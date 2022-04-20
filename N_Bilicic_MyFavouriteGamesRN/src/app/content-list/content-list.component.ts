@@ -19,10 +19,12 @@ export class ContentListComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.gameListService.getGames().subscribe(listOfGames => this.list = listOfGames);
-    this.messageService.clear();
-    this.messageService.add("Games array loaded!");
-
+    this.gameListService.getGames().subscribe(listOfGames => {
+      this.list = listOfGames;
+      this.messageService.clear();
+      this.messageService.add("Games array loaded!");
+  
+    });
   }
 
   selectCard(term: string, valid: boolean) {
